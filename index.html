@@ -1,0 +1,726 @@
+<!--BOOTSTRAP-->
+<!--bootstrap is a css frontend frame work
+we will cover what is bootstrap
+installation of bootstrap
+grid system
+the components-->
+    
+<!--why use bootstrap 
+increase development speed 
+assure responsiveness 
+prevent repetition between projects
+add consistency  
+ensure cross browser compatibility
+large community
+customizable-->
+
+  <!--DOWNLOADING BOOTSTRAP-->
+
+<!--to download bootstrap , you go to getbootstrap.com
+download it as a zip file and unzip it once it is downloaded the open he folder usinf vscode 
+of whatever IDE you are using    -->
+
+  <!-- DOWNLOADING VIA CDN-->
+
+<!-- create a new folder in your pc
+there is an option with bundled js hich contains all dependancies
+copy the css then copy the bundles version we can also use the separate option which 
+has bootstrap loaded separately and poppper separately
+open the folder you created then write the basic-->
+
+<!--DOWNLOADING VIA NPM-->
+
+<!--create a new folder 
+open the folder and intialize npm in the terminal, 
+type npm init
+write the project name
+create the index.html file and in the terminal install all the bootstrap dependancies
+type npm install bootstrap
+link the css.... href= "node_modules/bootstrap/dist/css/bootstrap.css "
+link js ...node_modules/bootstrap/dist/js/bootstrap.bundle.js
+ -->
+
+ <!--WHY BOOTSTRAP BECAME FAMOUS-->
+ <!-- responsiveness.. bootstrap uses columns to achieve the goal of responsiveness
+responsiveness is when the content fits in to the size of the screen -->
+
+ <!--HOW BOOTSTRAP WORKS-->
+ <!--so bootstrap works like this, it is divided into rows and columns.. the 
+maximum number of column width is divided into 12 units...
+you can decide to make use of all the 12 units, that is the maximum 
+within each row there are 12 units
+bootsrap has breakpoints depending on the screen size or the device size
+the rows occupy the number of units depending on the size of the screen, it redices into 6,4,2,1-->
+ <!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, ini
+   tial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="css/bootstrap.css">
+
+   <style>
+    [class*="col"]{
+      padding: 0.5rem;
+      background-color:green;
+      border:2px solid yellow;
+      color: white;
+    }
+  .child{
+    background-color: lightgreen  ;
+  }
+  </style>
+</head>
+<body>
+   <h1> hello bootstrap world</h1>
+   <!--CONTAINER-->
+   <!--"container border"has a margin on both the left and the right side
+  "container fluid"occupies the entire row noe margins on the right nor the left
+if you want to mix container border and container fluid such that when the scren is small it becomes conyainer fluid 
+and when the screen is large is rmeina container border, we use "container-md"-->
+   <div class="container-fluid border">content</div>
+
+   <!--GRID-->
+  <!--contains rows and columns
+  within a single row you can have multiple columns--> 
+ 
+<div class="container-md border">
+    <div class="row">
+      <div class="col">col 1</div>
+      <div class="col">col 2</div>
+      <div class="col">col 3</div>
+      <div class="col">col 4</div>
+    </div>
+    <div class="row">
+      <div class="col">col 1</div>
+      <div class="col">col 2</div>
+      <div class="col">col 3</div>
+      <div class="col">col 4</div>
+    </div>
+  </div>
+
+
+  <br>
+    <!--what happens if you want to change the width of your column to a size of your liking-->
+    <div class="row">
+      <div class="col-4">col 1</div>
+      <div class="col-5">col 2</div>
+      <div class="col">col 3</div>
+  </div>
+  <!--assuming you want to create a complex example,this means that, on alrge screen
+  one column will have a width of 8, the other a width of 6 .When you reduce
+the size of the sreen to medium size,both columns will have a width of 6 -->
+  <div class="container border">
+    <div class="row">
+      <div class="col-lg-8 col-md-6">col 1</div>
+      <div class="col-lg-4 col-md-6">col 2</div>
+    </div>
+
+<br>
+<br>
+
+  <!--ROW ALIGNMENT-->
+  <div class="container border">
+   <div class="row align-items-start" style="height: 500px; ">
+     <!--you can also have row align items end and row align items center-->
+    <div class="col"> one of three columns </div>
+    <div class="col"> one of three columns </div>
+    <div class="col"> one of three columns </div>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-4">col 1</div>
+        <div class="col-5">col 2</div>
+      </div>
+    </div>
+
+    <!--GUTTERS-->
+<!--gutters are responsible for space between the columns-->
+  <h2><div class="text-center my-5">gutter</div></h2>
+    <div class="container my-5">
+<!--my-5 means you want margins to apply at the y axis-->
+      <div class="row gx-1 gx-5"></div>
+      <!--gx-1 means the x axis will increase by 1 cm and gy-5 means that the y axis 
+        will increase by 5 cm-->
+      <div class="col-6"><div class="child">1</div></div>
+      <div class="col-6"><div class="child">2</div></div>
+      <div class="col-6"><div class="child">3</div></div>
+      <div class="col-6"><div class="child">4</div></div>
+    </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!--BUTTONS-->
+    <br>
+    <br>
+    <h2><div class="text-center my-5">buttons</div></h2>
+    <div class="container">
+      <button class="btn btn-primary" >click me!</button>
+      <button>click me</button>
+      <button type="button" class="btn btn-primary">primary</button>
+      <button type="button" class="btn btn-secondary">secondary</button>
+      <button type="button" class="btn btn-success">success</button>
+      <button type="button" class="btn btn-danger">danger</button>
+      <button type="button" class="btn btn-warning">warning</button>
+      <button type="button" class="btn btn-info">info</button>
+      <button type="button" class="btn btn-light">light</button>
+      <button type="button" class="btn btn-dark">dark</button>
+    </div>
+    <div class="container">
+    
+      <button type="button" class="btn btn-outline-primary">primary</button>
+      <button type="button" class="btn btn-outline-secondary">secondary</button>
+      <button type="button" class="btn btn-outline-success">success</button>
+      <button type="button" class="btn btn-outline-danger">danger</button>
+      <button type="button" class="btn btn-outline-warning">warning</button>
+      <button type="button" class="btn btn-outline-info">info</button>
+      <button type="button" class="btn btn-outline-light">light</button>
+      <button type="button" class="btn btn-outline-dark">dark</button>
+    </div>
+  
+   
+    <button type="button"class="btn btn-primary btn-lg">large button</button>
+  
+    <button type="button"class="btn btn-primary btn-regular">regular button</button>
+  
+    <button type="button"class="btn btn-primary btn-sm">small button</button>
+
+<!--cards-->   
+<h2><div class="container my-5">cards</div></h2>
+
+<!-- there are different methods of sizing the cards-->
+<!--1 using columns-->
+
+<!-- <div class="container my-5">
+  <div class="row">
+    <div class="col-2">
+      <div class="card">
+      </div>
+    </div>
+    </div>
+
+    <br>
+
+2. utiities
+
+    <div class="row">
+      <div class="card w-50">
+      </div>
+      <br>
+
+using the entire width of the screen
+
+      <div class="card" style="width: 18rem;"></div>
+      <div class="container my-5">
+        <div class="row my-5">
+          <div class="col-3">
+          </div>
+          <div class="col-3">
+          </div> -->
+
+
+
+          <!--horizontal cards-->
+          <h2><div class="container my-3">horizontal cards</div></h2>
+
+<div class="col-6">
+  <div class="card mb-3"style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img 
+        src="https://picsum.photos/200/300"
+        class="img-fluid rounded start"
+        alt="">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">card title</h5>
+          <p class="card-text">
+            this is a wider card with supporting text below as a natuaral
+          lead-in to additional content.this content is a little bit longer</p>
+          <p class="card-text">
+            <small class="text-muted">last update</small> 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+         <!--card headers and card footers-->
+<h2><div class="container my-3">card headers and footers</div></h2>
+
+          <div class="row">
+          <div class="col-2">
+          <div class="card">
+            <img 
+            src="https://picsum.photos/200/300"
+            class="card-img-top"
+            alt="...">
+           <div class="card-header">card header</div>
+           <div class="card-body">Lorem ipsum dolor sit amet.</div>
+           <div class="card-footer">2 days ago</div>
+            </div>
+          </div>
+        </div>
+
+      <!--card groups-->
+      <h2><div class="container my-3">card groups</div></h2>
+  <!--we use card groups when we want to align many cards at the same time
+    one can opt to create different cards individually, that is write different columns but it is advisable
+    to use card groups, it is easier-->
+    
+
+<div class="container my-5">
+  <div class="row my-5"></div>
+</div>
+
+<div class="row my-5">
+  <div class="card-group">
+    <div class="card">
+      <img src="https://picsum.photos/300/200"class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">card-title</h5>
+        <p class="card-text">this is a wider card with supporting text below as a
+          natural lead-in to additional content.This content is a little bit longer
+        </p>
+        <p class="card-text"><small class="text-muted">last updated 3 min ago</small> </p>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img src="https://picsum.photos/300/200"class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">card-title</h5>
+        <p class="card-text">this this card has supporting trext below as a natural lead-in to
+          addditional content.This content is a little bit longer   </p>
+        <p class="card-text"><small class="text-muted">last updated 3 min ago</small> </p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/300/200"class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">card-title</h5>
+        <p class="card-text">this is a wider card with supporting text below as a natural lead-in
+          to additional content. This content is a little bit longer.
+        </p>
+        <p class="card-text"><small class="text-muted">last updated 3 min ago</small> </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!---adding background colours to cards-->
+<h2><div class="container my-3">adding background color to cards</div></h2>
+
+<div class="row">
+  <div class="col-3">
+    <div class="card text-white bg-primary  mb-3"style="max-width:18rem">
+      <div class="card-header">header</div>
+      <div class="card-body">
+        <h5 class="card-title">primary card title</h5>
+        <p class="card-text">
+          some quick example text to build on the card titile and 
+          add onto the bulk of the cards content.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="card text-black bg-warning  mb-3"style="max-width:18rem">
+      <div class="card-header">header</div>
+      <div class="card-body">
+        <h5 class="card-title">warning card title</h5>
+        <p class="card-text">
+          some quick example text to build on the card titile and 
+          add onto the bulk of the cards content.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="card text-white bg-danger mb-3"style="max-width:18rem">
+      <div class="card-header">header</div>
+      <div class="card-body">
+        <h5 class="card-title">danger card title</h5>
+        <p class="card-text">
+          some quick example text to build on the card titile and 
+          add onto the bulk of the cards content.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="card text-white bg-dark mb-3"style="max-width:18rem">
+      <div class="card-header">header</div>
+      <div class="card-body">
+        <h5 class="card-title">dark card title</h5>
+        <p class="card-text">
+          some quick example text to build on the card titile and 
+          add onto the bulk of the cards content.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--cards with coloured outlines-->
+<h2><div class="container my-3">cards with cloloured outlines</div></h2>
+<div class="row my-5">
+  <div class="col-12">
+  <div class="card border-primary mb-4"style="max-width:18rem">
+    <div class="card-header">header</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">primary card title</h5>
+      <p class="card-text">
+        some quick example text to build on the card titile and 
+        add onto the bulk of the cards content.
+      </p>
+    </div>
+  </div>
+ <div class="card border-dark mb-4"style="max-width:18rem">
+    <div class="card-header">header</div>
+    <div class="card-body text-dark">
+      <h5 class="card-title">dark card title</h5>
+      <p class="card-text">
+        some quick example text to build on the card titile and 
+        add onto the bulk of the cards content.
+      </p>
+    </div>
+  </div>
+  <div class="card border-danger mb-4"style="max-width:18rem">
+    <div class="card-header">header</div>
+    <div class="card-body text-danger">
+      <h5 class="card-title">danger card title</h5>
+      <p class="card-text">
+        some quick example text to build on the card titile and 
+        add onto the bulk of the cards content.
+      </p>
+    </div>
+  </div>
+
+  <div class="card border-warning mb-4"style="max-width:18rem">
+    <div class="card-header">header</div>
+    <div class="card-body text-warning">
+      <h5 class="card-title">warning card title</h5>
+      <p class="card-text">
+        some quick example text to build on the card titile and 
+        add onto the bulk of the cards content.
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+           <!--an example of a card-->
+<h2><div class="container my-3">an example of a card</div></h2>
+      <div class="row">
+        <div class="col-4">
+          <div class="card">
+  <img 
+  src="https://picsum.photos/200/300"
+  class="card-img-top"
+  alt="...">
+  <div class="card-body">
+    <h5><div class="card-title">card title</div></h5>
+    <p class="card-text">some quick example text to build
+       on the card title and make up the bulk of the cards content</p>
+       <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</div>
+</div>
+
+
+<!--typography-->
+<h2><div class="container my-5">typography</div></h2>
+
+<!--typography is one of bootstrap utilities-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>real headings</h1>
+    <h1>h1.Bootstrap heading</h1>
+    <h2>h2.Bootstrap heading</h2>
+    <h3>h3.Bootstrap heading</h3>
+    <h4>h4.Bootstrap heading</h4>
+    <h5>h5.Bootstrap heading</h5>
+    <h6>h6.Bootstrap heading</h6>
+  </div>
+
+  <div class="col-md-6">
+    <h1>paragraphs looking like headings</h1>
+    <p class="h1">h1.Bootstrap heading</p>
+    <p class="h2">h1.Bootstrap heading</p>
+    <p class="h3">h1.Bootstrap heading</p>
+    <p class="h4">h1.Bootstrap heading</p>
+    <p class="h5">h1.Bootstrap heading</p>
+    <p class="h6">h1.Bootstrap heading</p>
+  </div>
+</div>
+</div>
+<div class="row">
+  <h1 class="Display-1">Display 1</h1>
+  <h1 class="Display-2">Display 2</h1>
+  <h1 class="Display-3">Display 3</h1>
+  <h1 class="Display-4">Display 4</h1>
+  <h1 class="Display-5">Display 5</h1>
+  <h1 class="Display-6">Display 6</h1>
+</div>
+<p class="row">
+  <p>you can use the mark tag to <mark>highlight</mark>text</p>
+  <p><del> this line of text is meant to be treated as a deleted text</del></p>
+  <p></p><S>this line of text is meant to be treated as a no longer accurate text</S></p>
+  <p><ins>this line of text is meant to be treated as an addition to the document</ins> </p>
+  <p><u>this line of text will render as underlined</u></p>
+  <P><small>this line of text is meant to be treated as a fine print </small></P>
+  <p><strong>this line is rendered a bold text</strong></p>
+  <p><em> this line is rendered as italized text</em></p>
+</div>
+</div>
+
+<!--blockquotes-->
+<h3><div class="container my-3">blockquotes</div></h3>
+< class="row">
+  <div class="col-md-4">
+<blockquote class="blockquote"><p>Lorem ipsum dolor sit amet.</p></blockquote>
+</div>
+<div class="col-md-4">
+  <figure>
+    <blockquote class="blockquote">
+    <P>a well known quote, contained in a blockquote element</P>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+     someone famous in <cite title="source title">source title</cite>
+    </figcaption>
+  </figure>
+</div>
+
+<div class="col-md-4">
+  <figure class="text-end">
+    <blockquote class="blockquote">
+    <p> a well known quote contained in a blockquote element</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+      someone famous in <cite title="source title">source title</cite>
+     </figcaption>
+  </figure>
+</div>
+
+<!--lists-->
+<h2><div class="container my-3">--lists--</div></h2>
+<div class="row">
+  <h3 class="my-3 ">list styles</h3>
+  <div class="col-md-6">
+    <ul class="list-unstyled">
+      <li>line number 1</li>
+      <li>line number 2</li>
+      <li>line number 3</li>
+      <li>line number 4</li>
+      <li>line number 5</li>
+      <ul>
+      <li>subline number1</li>
+      <li>subline number2</li>
+      <li>subline number3</li>
+    </ul>
+    </ul>
+  </div> 
+  <div class="col-md-6">
+    <ul class="list-inline">
+    <li class="list-inline-item">this is a list item</li>
+    <li class="list-inline-item"> and another one</li>
+    <li class="list-inline-item"> but they're displayed inline</li>
+  </ul>
+</div>
+</div>
+  
+<!--responsive images-->
+
+
+<h3><div class="my-3">responsive images</div></h3>
+<div class="container">
+   <div style="width:40%; border: 5px red solid">
+    <img
+    src="https://picsum.photos/490/300"
+    alt=""
+    class="img-fluid" 
+    />
+  </div>
+  <!--the img fluid is meant to make that image responsive-->
+
+  <!--thumbnail-->
+  <h1 class="my-3">Thumbnail</h1> 
+  <img
+    src="https://picsum.photos/400/300"
+    alt=""
+    class="img-Thumbnail w-25" 
+    />
+</div>
+<!--thumbnail gives the image a rounded border-->
+
+<!--alignment-->
+<h1 class="my-5">Alignment</h1>
+<img
+    src="https://picsum.photos/400/300"
+    alt=""
+    class="float-end w-25" 
+    />
+    <!--Float end takes the image to the furthest right end-->
+<div class="clearfix my-5"></div>
+<img
+src="https://picsum.photos/400/300"
+alt=""
+class="d-block mx-auto w-25 rounded"
+/>
+
+
+<!--utilities-->
+
+<h1 class="my-3">utilities</h1>
+
+<div class="container ">
+ <div 
+ style="padding: 3rem;width: 50%;margin: auto;border: 1px solid black;">
+
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+    Odio inventore, ad ea voluptatibus quo dolore deleniti
+    consequuntur expedita ex ab nisi assumenda et veniam.
+    Suscipit minima eum eos! Totam iusto dolor vero
+    repudiandae rerum voluptatibus, voluptatem quos rem
+    beatae excepturi tempora dolorum et eius architecto sed ut
+    similique ipsum veniam. Sint autem quis, aliquam ipsam
+    nulla cupiditate deleniti quidem unde asperiores minima 
+   
+  </p>
+
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+    Odio inventore, ad ea voluptatibus quo dolore deleniti
+    consequuntur expedita ex ab nisi assumenda et veniam.
+    Suscipit minima eum eos! Totam iusto dolor vero
+    repudiandae rerum voluptatibus, voluptatem quos rem
+    beatae excepturi tempora dolorum et eius architecto sed ut
+    similique ipsum veniam. Sint autem quis, aliquam ipsam
+    nulla cupiditate deleniti quidem unde asperiores minima 
+    </p>
+<div
+style="
+width: 50%;
+background-color: black;
+color: white;
+margin: 0 auto;
+text-align: center;"
+> centered element
+</div>
+</div>
+
+
+<div class="mt-5 border border-1 border-dark w-50 mx-auto ps-5">
+  <!--mt-5 stands for margin top 5 , you start with property then side then the value, border-1 defines the 
+  size of the boarder, mx-auto x works on the x axis and the y works on the y axis, ps stsands for pading side, there
+is also pt, padding top-->
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+     Ad blanditiis minima atque modi, exercitationem 
+     reprehenderit iste adipisci voluptatum dolore tenetur odio 
+     qui maiores ex cumque delectus unde amet nemo facere 
+     inventore dolor? Voluptate vel et fugiat cum quibusdam,
+     repellendus reprehenderit magnam laborum quae totam 
+     suscipit deleniti minus voluptatum vero dolore.</p>
+  <div class="m-5">
+    <!--if you add d-none just after the m-5 the paragraph will disappear-->
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+     Nulla voluptatibus eaque unde, repellat consequuntur alias 
+     sunt blanditiis neque sit fuga reprehenderit iure. Nobis
+     alias harum voluptatum quas sapiente, quidem excepturi 
+     laboriosam quisquam quo laborum cum impedit nemo iusto 
+     sunt, hic nesciunt magnam nam aliquam placeat dolore vero, 
+     ab ut consectetur?</p>
+
+<div 
+class="
+d-none d-md-block d-lg-none
+w-50 
+mx-auto 
+text-center 
+bg-primary 
+text-white">
+centered element</div>
+</div>
+</div>
+
+<div class="
+d-flex 
+flex-row 
+bd-highlight
+mb-3 
+border border-1 border-dark 
+mt-5">
+  <div class="p-2 bd-highlight">flex item 1</div>
+  <div class="p-2 bd-highlight">flex item 2</div>
+  <div class="p-2 bd-highlight">flex item 3</div>
+</div>
+
+
+</div>
+<!--d-none means the block wont exist but d-block means the block will exist
+so incase you want it to exist in a certain screen size and not in others
+you allocate each of them , md stands for medium screen size ,and lg 
+stands for large screen size and d only stands for the smallest screen size-->
+
+
+<!--tables-->
+<div class="container">
+  <h1><div class="my-3">tables</div></h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>jacob</td>
+        <td>thomston</td>
+        <td>@lot</td>
+
+      </tr>
+      <tr>
+        <th scope=""></th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+<!--the bundle.js conatains all the bootstrap dependancies-->
+<script src="js/bootstrap.bundle.js "></script>
+</body>
+</html>  
+ 
+
